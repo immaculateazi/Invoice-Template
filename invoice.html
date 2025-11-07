@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Invoice Template</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="invoice-wrap">
+    <header class="invoice-header">
+      <div class="brand">
+        <h1 contenteditable="true" id="companyName">Your Company</h1>
+        <p contenteditable="true" id="companyAddress">123 Main St, City, Country</p>
+      </div>
+      <div class="controls">
+        <button id="printBtn">Print / Save PDF</button>
+      </div>
+    </header>
+
+    <section class="invoice-meta">
+      <div class="bill-to">
+        <h3>Bill To</h3>
+        <p contenteditable="true" id="clientName">Client Name</p>
+        <p contenteditable="true" id="clientAddress">Client Address</p>
+      </div>
+
+      <div class="meta-right">
+        <label>Invoice #: <span id="invoiceNumber">INV-001</span></label>
+        <label>Date: <input type="date" id="invoiceDate" /></label>
+        <label>Due: <input type="date" id="dueDate" /></label>
+      </div>
+    </section>
+
+    <section class="items-section">
+      <table class="items-table" id="itemsTable">
+        <thead>
+          <tr>
+            <th style="width:48%">Description</th>
+            <th style="width:12%">Qty</th>
+            <th style="width:16%">Unit</th>
+            <th style="width:16%">Tax %</th>
+            <th style="width:8%">Total</th>
+            <th style="width:8%"></th>
+          </tr>
+        </thead>
+        <tbody id="itemsBody">
+          <!-- rows injected by JS -->
+        </tbody>
+      </table>
+
+      <div class="items-actions">
+        <button id="addItemBtn">+ Add Item</button>
+      </div>
+    </section>
+
+    <section class="totals">
+      <div class="notes" contenteditable="true" id="notes">
+        Notes: Thank you for your Patronage.
+      </div>
+      <div class="summary">
+        <div class="summary-row"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+        <div class="summary-row"><span>Total Tax</span><span id="totalTax">$0.00</span></div>
+        <div class="summary-row total"><span>Grand Total</span><span id="grandTotal">$0.00</span></div>
+      </div>
+    </section>
+
+    <footer class="invoice-footer">
+      <small>Generated with Immaculate's Invoice Template</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
